@@ -114,9 +114,10 @@ img {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    align-items: flex-start;
+    align-items: center;
     margin-top: 2%;
 }
+
 
 .presentation {
     margin: 20px 0;
@@ -186,6 +187,7 @@ img {
 .skills,
 .softSkills {
     width: 83%;
+    max-width: 100%; /* Añadido */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -211,23 +213,8 @@ img {
     justify-content: space-between;
     width: 100%;
     max-width: 1200px;
-}
-.service{
-    flex-basis: calc(33.33% - 20px);
-    
-}
-.skills-card {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
-
-.skill {
-    flex-basis: calc(33.33% - 20px);
-    
-    margin: 10px;
-}
-
 
 .service,
 .skill,
@@ -236,6 +223,8 @@ img {
     padding: 20px;
     margin: 10px;
     color: #fff;
+    flex-basis: calc(33.33% - 20px);
+    box-sizing: border-box;
 }
 
 .service:hover,
@@ -308,13 +297,38 @@ img {
     background-color: #00758f;
 }
 
-@media (max-width: 768px) {
+.presentation-text {
+    font-size: 1.6em;
+    margin: 20px 0;
+}
+.service-item{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+a{
+    color: #f4f4f4;
+}
+.icons{
+    display: flex;
+    align-items: center;
+}
+.icon-s{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px ;
+    border-radius: 0%;
+
+}
+@media (min-width: 768px) and (max-width: 769px) {
     .container {
         margin: 5% 5%;
     }
 
     .side-navbar {
-        width: 15%;
+        width: 13%;
     }
 
     .card-about,
@@ -323,23 +337,34 @@ img {
     .skills,
     .skill {
         width: 100%;
-    }
-
-    .service-card,
-    .skills-card {
-        flex-direction: column;
+        margin-left: 13%;
     }
 
     .service,
     .skill {
         flex-basis: 100%;
     }
+
+    .service {
+        margin-bottom: 20px;
+    }
+
+
+    .skill {
+        margin-bottom: 20px;
+        
+    }
+
+    .img-container {
+        margin-left: 0; /* Añadido */
+    }
 }
 
 @media (max-width: 480px) {
-    body{
+    .container {
         overflow-x: hidden;
     }
+
     .container {
         margin: 5% 2%;
     }
@@ -358,7 +383,16 @@ img {
 
     .service,
     .skill {
-        margin: 5px;
+        margin: 5px 0;
+        flex-basis: 100%;
     }
-    
+
+    .service,
+    .skill {
+        margin-bottom: 10px;
+    }
+
+    .img-container {
+        margin-left: 0; /* Añadido */
+    }
 }
